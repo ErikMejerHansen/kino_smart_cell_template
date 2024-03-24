@@ -5,9 +5,10 @@ defmodule KinoSmartCellTemplate.MixProject do
     [
       app: :kino_smart_cell_template,
       version: "0.1.0",
-      elixir: "~> 1.16",
+      elixir: "~> 1.15",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      aliases: aliases()
     ]
   end
 
@@ -23,6 +24,12 @@ defmodule KinoSmartCellTemplate.MixProject do
     [
       # {:dep_from_hexpm, "~> 0.3.0"},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
+    ]
+  end
+
+  defp aliases do
+    [
+      setup: ["deps.get", "cmd npm install"]
     ]
   end
 end
