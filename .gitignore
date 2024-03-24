@@ -26,5 +26,8 @@ kino_smart_cell_template-*.tar
 /tmp/
 
 # Typescript / JavaScript ignores
-/node_modules
+/js/node_modules
 /coverage
+/assets/*.js
+/assets/*.d.ts
+/assets/*.d.map

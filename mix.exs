@@ -29,8 +29,9 @@ defmodule KinoSmartCellTemplate.MixProject do
 
   defp aliases do
     [
-      setup: ["deps.get", "cmd npm install"],
-      test: ["test", "cmd npm test"]
+      setup: ["deps.get", "cmd npm install --prefix js"],
+      test: ["test", "cmd npm test --prefix js"],
+      build: ["cmd --cd js npx tsc"]
     ]
   end
 end
