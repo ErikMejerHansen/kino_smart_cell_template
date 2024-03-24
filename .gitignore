@@ -30,4 +30,4 @@ kino_smart_cell_template-*.tar
 /coverage
 /assets/*.js
 /assets/*.d.ts
-/assets/*.d.map
+/assets/*.map
