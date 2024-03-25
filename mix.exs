@@ -24,6 +24,7 @@ defmodule KinoSmartCellTemplate.MixProject do
     [
       # {:dep_from_hexpm, "~> 0.3.0"},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
+      {:kino, "~> 0.12.3"}
     ]
   end
 
@@ -31,7 +32,7 @@ defmodule KinoSmartCellTemplate.MixProject do
     [
       setup: ["deps.get", "cmd npm install --prefix js"],
       test: ["test", "cmd npm test --prefix js"],
-      build: ["cmd --cd js npx tsc"]
+      compile: ["compile", "cmd --cd js npx tsc"]
     ]
   end
 end
