@@ -32,7 +32,8 @@ defmodule KinoSmartCellTemplate.MixProject do
     [
       setup: ["deps.get", "cmd npm install --prefix js"],
       test: ["test", "cmd npm test --prefix js"],
-      compile: ["compile", "cmd --cd js npx tsc"]
+      compile: ["compile", "cmd --cd js npx tsc"],
+      "compile.watch": ["compile", "cmd --cd js npx tsc --watch"]
     ]
   end
 end
