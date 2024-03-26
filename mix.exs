@@ -32,8 +32,13 @@ defmodule KinoSmartCellTemplate.MixProject do
     [
       setup: ["deps.get", "cmd npm install --prefix js"],
       test: ["test", "cmd npm test --prefix js"],
-      compile: ["compile", "cmd --cd js npx tsc"],
-      "compile.watch": ["compile", "cmd --cd js npx tsc --watch"]
+      # Running tsc first to avoid warning about empty "assets" folder
+      compile: [esbuild_command(), "compile"],
+      "compile.watch": ["compile", esbuild_command() <> " --watch"]
     ]
+  end
+
+  defp esbuild_command do
+    "cmd --cd js npx esbuild src/main.ts --outfile=../assets/main.js --bundle --format=esm"
   end
 end

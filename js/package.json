@@ -8,10 +8,15 @@
     "test": "test"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build.tsc": "tsc -p tsconfig.exclude_tests.json",
+    "build.kino-bundle": "kino-bundler --outdir ../assets",
+    "build": ""
   },
   "devDependencies": {
+    "@livebook/kino-bundler": "^0.1.0",
     "@types/jest": "^29.5.12",
+    "esbuild": "0.20.2",
     "ts-jest": "^29.1.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.3"
